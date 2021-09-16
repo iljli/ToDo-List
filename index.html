@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>TO DO APP</title>
+    <script defer src=''></script>
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+
+    <main>
+        <!-- Task section for eintering the ToDo -->
+        <div class="tasktab">
+            <h1 class='taskTab_toDo'>To Do List</h1>
+            <input type="date" id="start" name="todays-date" value="2021-09-16" min="2018-01-01" max="2018-12-31">
+
+            <input type="text" placeholder="Write your to do in here! " id="text-field" name="name" required
+                minlength="" maxlength="50" size="10" />
+        </div>
+
+
+        <!-- here we can see our list of all tasks -->
+        <div class="singelTask">
+            <div class="scroller flexbox-container ">
+                <!-- task ist starting here -->
+                <div class="flexbox-container-content">
+                    <p class="singleTask">Placeholder-for-task</p>
+                    <input class="checkboxTask" id="inProgress-PLACEHOLERVAR" type="checkbox" name="inProgress"
+                        value="donetask">
+                    <label class="checkboxTask" for="inProgress">in Progress</label>
+                </div>
+                <!-- task ist starting here -->
+                <div class="flexbox-container-content">
+                    <p class="singleTask">Placeholder-for-task</p>
+                    <input class="checkboxTask" id="inProgress-PLACEHOLERVAR" type="checkbox" name="inProgress"
+                        value="donetask">
+                    <label class="checkboxTask" for="inProgress">in Progress</label>
+                </div>
+                <!-- task ist starting here -->
+                <div class="flexbox-container-content">
+                    <p class="singleTask">Placeholder-for-task</p>
+                    <input class="checkboxTask" id="inProgress-PLACEHOLERVAR" type="checkbox" name="inProgress"
+                        value="donetask">
+                    <label class="checkboxTask" for="inProgress">in Progress</label>
+                </div>
+                <!-- task ist starting here -->
+                <div class="flexbox-container-content">
+                    <p class="singleTask">Placeholder-for-task</p>
+                    <input class="checkboxTask" id="inProgress-PLACEHOLERVAR" type="checkbox" name="inProgress"
+                        value="donetask">
+                    <label class="checkboxTask" for="inProgress">in Progress</label>
+                </div>
+
+            </div>
+            <br>
+        </div>
+
+        <!-- here we list the tasks that are achived -->
+        <div class="taskArchiv"></div>
+        <div class="scroller-archive">
+            <p class="singleTask">Placeholder-for-done-task</p>
+            <p class="singleTask">Placeholder-for-done-task</p>
+            <p class="singleTask">Placeholder-for-done-task</p>
+            <p class="singleTask">Placeholder-for-done-task</p>
+            <p class="singleTask">Placeholder-for-done-task</p>
+            <p class="singleTask">Placeholder-for-done-task</p>
+        </div>
+        <h2 class='taskTab_motto'>You'll feel better. Really!</h2>
+
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>

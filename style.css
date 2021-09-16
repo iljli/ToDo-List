@@ -1,0 +1,43 @@
+main {
+    font-family: 'Roboto', sans-serif;
+}
+
+.scroller {
+    overflow-y: scroll;
+    scrollbar-color: blue lightgrey;
+    scrollbar-width: thin;
+}
+
+
+.scroller-archive {
+    width: 400px;
+    height: 50px;
+    overflow-y: scroll;
+    scrollbar-color: blue lightgrey;
+    scrollbar-width: thin;
+}
+
+.singleTask {
+    width: 400px;
+    border: 1px solid red;
+    margin: 2px;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+}
+
+.flexbox-container {
+    display: flex;
+    width: 500px;
+    border: 1px solid green;
+    flex-direction: column;
+}
+
+
+.flexbox-container-content {
+    display: flex;
+    border: 1px solid blue;
+    justify-content: flex-start;
+    flex-direction: row;
+    white-space: nowrap;
+}
