@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>TO DO APP</title>
     <script src="https://kit.fontawesome.com/c323efb4d1.js" crossorigin="anonymous"></script>
-    <script defer src=''></script>
+    <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -26,94 +26,41 @@
             <div class="input-date">
                 <input type="date" id="start" name="todays-date" value="2021-09-17" min="1900-01-01" max="2100-12-31">
             </div>
-            <div class="input-text">
-
-                <input type="text" placeholder="Write your to do in here! " input type="text"
+            <form class="input-text">
+                <input id="inputTextField" type="text" placeholder="Write your ToDo in here! " input type="text"
                     style="height:40px;width:480px;" id="text-field" name="name" required />
                 <i class="fas fa-plus-circle" id="add-to-do" size="3x"></i>
-            </div>
+            </form>
 
-            <div class="flexbox-container">
-                <div class="flexbox_column">
-                    <div class="flexbox-container-content ">
-                        Placeholder for task
-                    </div>
-                    <div class="flexbox-container-content buttonDone">
-                        done
+            <div class="flexbox_container ">
+                <div class="flexbox_column tasks_backlog">
+                    <div>
+                        <!-- Placeholder for task to do -->
                     </div>
                 </div>
-                <div class="flexbox_column">
-                    <div class="flexbox-container-content ">
-                        Placeholder for task
-                    </div>
-                    <div class="flexbox-container-content buttonDone">
-                        done
-                    </div>
-                </div>
-                <div class="flexbox_column">
-                    <div class="flexbox-container-content ">
-                        Placeholder for task
-                    </div>
-                    <div class="flexbox-container-content buttonDone">
-                        done
-                    </div>
-                </div>
-                <div class="flexbox_column">
-                    <div class="flexbox-container-content ">
-                        Placeholder for task
-                    </div>
-                    <div class="flexbox-container-content buttonDone">
-                        done
-                    </div>
-                </div>
-                <div class="flexbox_column">
-                    <div class="flexbox-container-content ">
-                        Placeholder for task
-                    </div>
-                    <div class="flexbox-container-content buttonDone">
-                        done
-                    </div>
-                </div>
-                <div class="flexbox_column">
-                    <div class="flexbox-container-content ">
-                        Placeholder for task
-                    </div>
-                    <div class="flexbox-container-content buttonDone">
-                        done
-                    </div>
-                </div>
-            </div>
 
 
+                <div class="flexbox_container">
+                    <div class="flexbox_column tasks_active">
+                        <div class="flexbox_container_content ">
+                            Placeholder for started task
+                        </div>
+                        <div class="flexbox_container_content buttonDone">
+                            done
+                        </div>
+                    </div>
 
 
-            <!-- here we list the tasks that are achived -->
-            <div class="flexbox-container">
-                <div class="flexbox_column">
-                    <div class="flexbox-container-content ">
-                        Placeholder for done task
-                    </div>
-                    <div class="flexbox-container-content buttonDelete">
-                        delete
-                    </div>
-                </div>
-                <div class="flexbox_column">
-                    <div class="flexbox-container-content ">
-                        Placeholder for done task
-                    </div>
-                    <div class="flexbox-container-content buttonDelete">
-                        delete
-                    </div>
-                </div>
-                <div class="flexbox_column">
-                    <div class="flexbox-container-content ">
-                        Placeholder for done task
-                    </div>
-                    <div class="flexbox-container-content buttonDelete">
-                        delete
-                    </div>
-                </div>
-                <h2 class='taskTab_motto'>You'll feel better. Really!</h2>
+                    <div class="flexbox_container">
+                        <div class="flexbox_column tasks_done">
+                            <div class="flexbox_container_content ">
+                                Placeholder for done task
+                            </div>
+                            <div class="flexbox_container_content buttonDelete">
+                                delete
+                            </div>
+                        </div>
+                        <h2 class='taskTab_motto'>You'll feel better. Really!</h2>
     </main>
     <footer>
 

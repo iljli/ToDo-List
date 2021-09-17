@@ -54,7 +54,7 @@ h2 {
 }
 
 
-.flexbox-container {
+.flexbox_container {
     margin: 20px;
     display: flex;
     justify-content: center;
@@ -64,8 +64,8 @@ h2 {
     align-items: center;
 }
 
-.flexbox-container-content {
-    border: 1px solid red;
+.flexbox_container_content {
+    border: 1px solid lightgray;
     padding: 5px 10px 5px 10px;
     width: 500px;
     text-align: left;
@@ -77,6 +77,14 @@ h2 {
     width: 500px;
     /* justify-content: space-between; */
     align-items: center;
+}
+
+.buttonStart {
+    display: flex;
+    border: 1px solid darkolivegreen;
+    background-color: skyblue;
+    width: 100px;
+    text-align: center;
 }
 
 .buttonDone {
