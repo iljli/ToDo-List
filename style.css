@@ -1,5 +1,33 @@
+* {
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
 main {
     font-family: 'Roboto', sans-serif;
+    background: #ccffff;
+    /* position: relative; */
+    text-align: center;
+
+
+}
+
+h1 {
+    font-size: 50px;
+    padding: 0.5em;
+}
+
+h2 {
+    padding: 1em;
+}
+
+
+.input-date {
+    margin-bottom: .5em;
+}
+
+.input-text {
+    size: ;
 }
 
 .scroller {
@@ -10,34 +38,59 @@ main {
 
 
 .scroller-archive {
-    width: 400px;
-    height: 50px;
     overflow-y: scroll;
     scrollbar-color: blue lightgrey;
     scrollbar-width: thin;
 }
 
 .singleTask {
-    width: 400px;
-    border: 1px solid red;
-    margin: 2px;
-    display: flex;
-    flex-direction: column;
+    /* width: 400px; */
+    height: 30px;
+    border: 1px solid blue;
+    /* margin: 2px; */
+    /* display: flex; */
+    /* flex-direction: column; */
     white-space: nowrap;
 }
+
 
 .flexbox-container {
+    margin: 20px;
     display: flex;
-    width: 500px;
-    border: 1px solid green;
+    justify-content: center;
     flex-direction: column;
+    font-size: 1.5rem;
+    /* justify-content: center; */
+    align-items: center;
 }
 
-
 .flexbox-container-content {
+    border: 1px solid red;
+    padding: 5px 10px 5px 10px;
+    width: 500px;
+    text-align: left;
+}
+
+.flexbox_column {
     display: flex;
-    border: 1px solid blue;
-    justify-content: flex-start;
     flex-direction: row;
-    white-space: nowrap;
+    width: 500px;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.buttonDone {
+    display: flex;
+    border: 1px solid green;
+    background-color: lightgreen;
+    width: 100px;
+    text-align: center;
+}
+
+.buttonDelete {
+    display: flex;
+    border: 1px solid red;
+    background-color: palevioletred;
+    width: 100px;
+    text-align: center;
 }
