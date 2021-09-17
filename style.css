@@ -8,8 +8,10 @@ main {
     background: #ccffff;
     /* position: relative; */
     text-align: center;
+}
 
-
+i {
+    font-size: 2rem;
 }
 
 h1 {
@@ -87,6 +89,15 @@ h2 {
     text-align: center;
 }
 
+.buttonStartPlaceholder {
+    display: flex;
+    border: 1px solid darkolivegreen;
+    color: white;
+    background-color: lightgray;
+    width: 100px;
+    text-align: center;
+}
+
 .buttonDone {
     display: flex;
     border: 1px solid green;
@@ -101,4 +112,8 @@ h2 {
     background-color: palevioletred;
     width: 100px;
     text-align: center;
+}
+
+.placeholder {
+    color: lightgray;
 }
