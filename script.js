@@ -10,7 +10,6 @@ const buttonAddTask = document.getElementById('add-to-do');
 const inputFieldMessage = document.getElementById('inputTextField');
 let buttonsRemove = document.getElementsByClassName('buttonRemove');
 let buttonsStart = document.getElementsByClassName('buttonStart');
-// let button
 
 
 //***********************************************************/
@@ -62,7 +61,24 @@ const textIsNotEmpty = (text) => {
 
 
 //***********************************************************/
-// Injects new task to HTML-List
+function injectTemplateToDOM(todoid, todoTextMessage) {
+    const template = `
+    <div class = "flexbox_column tasks_backlog" data-todoid="${todoid}">
+    <div class = "flexbox_container_content"">
+        ${todoTextMessage}
+        </div>
+        <div class = "flexbox_container_content buttonStart clickableItem" >
+        start
+        </div>
+        <div div class = "flexbox_container_content buttonRemove clickableItem" >
+        delete 
+        </div>
+    </div>
+    `;
+    document.querySelector('.tasks_backlog').lastElementChild.innerHTML += template;
+}
+
+
 //***********************************************************/
 buttonAddTask.onclick = function () {
     console.log("Button pressed for adding task");
@@ -70,21 +86,7 @@ buttonAddTask.onclick = function () {
         const todoTextMessage = inputFieldMessage.value;
         let todoid = Date.now();
         addTaskToList(todoid, "todo", todoTextMessage)
-
-        const template = `
-        <div class = "flexbox_column tasks_backlog" data-todoid="${todoid}">
-        <div class = "flexbox_container_content"">
-            ${todoTextMessage}
-            </div>
-            <div class = "flexbox_container_content buttonStart clickableItem" >
-            start
-            </div>
-            <div div class = "flexbox_container_content buttonRemove clickableItem" >
-            delete 
-            </div>
-        </div>
-        `;
-        document.querySelector('.tasks_backlog').lastElementChild.innerHTML += template;
+        injectTemplateToDOM(todoid, todoTextMessage);
         parseButtonRemove();
         parseButtonStart();
         console.log(`Added "${todoTextMessage}" to the Task-List`);
@@ -96,10 +98,7 @@ buttonAddTask.onclick = function () {
 
 
 //***********************************************************/
-// Injects placeholder task to HTML-List
-//***********************************************************/
 addPlaceholder_todoTasks = function () {
-
     const template = `
     <div class = "flexbox_column tasks_backlog placeholder">
     <div class="flexbox_container_content">
@@ -112,14 +111,16 @@ addPlaceholder_todoTasks = function () {
     document.querySelector('.tasks_backlog').firstElementChild.innerHTML += template;
 }
 
-addPlaceholder_todoTasks(); // ToDo; if tasklist is empty
 
+//***********************************************************/
+addPlaceholder_todoTasks();     // ToDo; if tasklist is empty - here used as anchor
 
 
 //***********************************************************/
 function startingTask(e) {
     console.log(e.target.parentElement.dataset.todoid);
 }
+
 
 //***********************************************************/
 function removingTask(e) {
