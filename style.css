@@ -69,14 +69,14 @@ h2 {
 .flexbox_container_content {
     border: 1px solid lightgray;
     padding: 5px 10px 5px 10px;
-    width: 500px;
+    width: 600px;
     text-align: left;
 }
 
 .flexbox_column {
     display: flex;
     flex-direction: row;
-    width: 500px;
+    width: 600px;
     /* justify-content: space-between; */
     align-items: center;
 }
@@ -106,6 +106,14 @@ h2 {
     text-align: center;
 }
 
+.buttonRemove {
+    display: flex;
+    border: 1px solid red;
+    background-color: tomato;
+    width: 100px;
+    text-align: center;
+}
+
 .buttonDelete {
     display: flex;
     border: 1px solid red;
@@ -116,4 +124,8 @@ h2 {
 
 .placeholder {
     color: lightgray;
+}
+
+.clickableItem:hover {
+    cursor: pointer;
 }
