@@ -81,20 +81,20 @@ h1 {
     align-items: center;
 }
 
-.buttonStart {
-    display: flex;
-    border: 1px solid darkolivegreen;
-    background-color: skyblue;
-    width: 100px;
-    text-align: center;
-    margin: 5px 5px 5px 5px;
-}
-
 .buttonStartPlaceholder {
     display: flex;
     border: 1px solid darkolivegreen;
     color: white;
     background-color: lightgray;
+    width: 100px;
+    text-align: center;
+    margin: 5px 5px 5px 5px;
+}
+
+.buttonStart {
+    display: flex;
+    border: 1px solid darkolivegreen;
+    background-color: skyblue;
     width: 100px;
     text-align: center;
     margin: 5px 5px 5px 5px;
@@ -121,7 +121,7 @@ h1 {
 .buttonDelete {
     display: flex;
     border: 1px solid red;
-    background-color: palevioletred;
+    background-color: tomato;
     width: 100px;
     text-align: center;
     margin: 5px 5px 5px 5px;
