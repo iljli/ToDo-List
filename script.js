@@ -155,7 +155,6 @@ buttonAddTask.onclick = function () {
         let todoid = Date.now();
         addTaskToList(todoid, "todo", todoTextMessage)
         injectTemplateToDOM(todoid, "todo", todoTextMessage);
-        // parseButtonStartTask();
         parseButtonStart();
         countTasks(taskList)
         console.log(`Added "${todoTextMessage}" to the Task-List`);
@@ -178,12 +177,7 @@ addPlaceholder_todoTasks = function () {
     </div>
     `;
     document.querySelector('.tasks_backlog').firstElementChild.innerHTML += template;
-    // document.querySelector('.anker').firstElementChild.innerHTML += template;
 }
-
-
-//***********************************************************/
-// addPlaceholder_todoTasks(); // ToDo; if tasklist is empty - here used as anchor
 
 
 //***********************************************************/
