@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="normalize.css" type="text/css">
+    <link rel="stylesheet" href="normalize.css" type="text/css"> 
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>TO DO APP</title>
@@ -15,63 +15,47 @@
 
 <body>
 
-    <header>
+<main>
+    <!-- Task section for eintering the ToDo -->
+    <div class="tasktab">
+        <h1 class='taskTab_toDo'>ToDo List</h1>
+            <input id="inputTextField" class="input-text" type="text" placeholder="Write your ToDo in here!" />
+            <i class="fas fa-plus-circle clickableItem" id="add-to-do"></i>
 
-    </header>
-
-    <main>
-        <!-- Task section for eintering the ToDo -->
-        <div class="tasktab">
-            <h1 class='taskTab_toDo'>ToDo List</h1>
-            <div class="input-date">
-                <input type="date" id="start" name="todays-date" value="2021-09-17" min="1900-01-01" max="2100-12-31">
+        <div class="flexbox_container ">
+            <div class="flexbox_column tasks_backlog">
+                <div>
+                    <!-- Placeholder for task to do -->
+                </div>
             </div>
-            <form class="input-text">
-                <input id="inputTextField" type="text" placeholder="Write your ToDo in here! " input type="text"
-                    style="height:40px;width:480px;" id="text-field" name="name" required />
-                <i class="fas fa-plus-circle clickableItem" id="add-to-do" size="3x"></i>
-            </form>
 
-            <div class="flexbox_container ">
-                <div class="flexbox_column tasks_backlog">
-                    <div>
-                        <!-- Placeholder for task to do -->
+            <div class="flexbox_container">
+                <div class="flexbox_column tasks_active">
+                    <div class="flexbox_container_content ">
+                        Placeholder for started task
+                    </div>
+                    <div class="flexbox_container_content buttonDone clickableItem">
+                        done
+                    </div>
+                    <div class="flexbox_container_content buttonRemove clickableItem">
+                        delete
                     </div>
                 </div>
+            </div>
 
-
-                <div class="flexbox_container">
-                    <div class="flexbox_column tasks_active">
-                        <div class="flexbox_container_content ">
-                            Placeholder for started task
-                        </div>
-                        <div class="flexbox_container_content buttonDone clickableItem">
-                            done
-                        </div>
-                        <div class="flexbox_container_content buttonRemove clickableItem">
-                            delete
-                        </div>
+            <div class="flexbox_container">
+                <div class="flexbox_column tasks_done">
+                    <div class="flexbox_container_content ">
+                        Placeholder for done task
                     </div>
-
-
-                    <div class="flexbox_container">
-                        <div class="flexbox_column tasks_done">
-                            <div class="flexbox_container_content ">
-                                Placeholder for done task
-                            </div>
-                            <div class="flexbox_container_content buttonDelete clickableItem">
-                                delete
-                            </div>
-                        </div>
-                        <h2 class='taskTab_motto'>You'll feel better. Really!</h2>
-    </main>
-    <footer>
-
-    </footer>
+                    <div class="flexbox_container_content buttonDelete clickableItem">
+                        delete
+                    </div>
+                </div>
+                <h2 class='taskTab_motto'>You'll feel better. Really!</h2>
+            </div>
+        </div>
+</main>
 
 </body>
-
-
-</html>
-
 </html>

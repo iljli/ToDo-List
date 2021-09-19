@@ -1,9 +1,41 @@
 //***********************************************************/
-let taskList = [{
+let taskList = [
+    {
     "id_todo": 0,
     "status_todo": "placeholder", // todo; active; done; deleted; placeholder
     "task_todo": "Start your first task..."
-}]
+    },
+    {
+    "id_todo": 10,
+    "status_todo": "todo",
+    "task_todo": "Task A (todo)"
+    },
+    {
+    "id_todo": 11,
+    "status_todo": "todo",
+    "task_todo": "Task B (todo)"
+    },
+    {
+    "id_todo": 12,
+    "status_todo": "done",
+    "task_todo": "Task C (done)"
+    },
+    {
+    "id_todo": 13,
+    "status_todo": "done",
+    "task_todo": "Task D (done)"
+    },
+    {
+    "id_todo": 14,
+    "status_todo": "deleted",
+    "task_todo": "Task E (deleted)"
+    },
+    {
+    "id_todo": 15,
+    "status_todo": "deleted",
+    "task_todo": "Task F (deleted)"
+    },
+]
 
 
 const buttonAddTask = document.getElementById('add-to-do');

@@ -3,47 +3,47 @@
     /* border: 1px solid red; */
 }
 
+body {
+    background-color: #a9ecee;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 main {
     font-family: 'Roboto', sans-serif;
-    background: #ccffff;
-    /* position: relative; */
     text-align: center;
 }
 
 i {
     font-size: 2rem;
+    width: 100px;
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 3rem;
     padding: 0.5em;
 }
 
-h2 {
-    padding: 1em;
-}
-
-
-.input-date {
-    margin-bottom: .5em;
-}
 
 .input-text {
-    size: ;
+    size: 1rem;
+    height: 40px;
+    width: 500px;
+    font-size: 1.5rem;
 }
 
-.scroller {
+
+/* .scroller {
     overflow-y: scroll;
     scrollbar-color: blue lightgrey;
     scrollbar-width: thin;
-}
+} */
 
 
-.scroller-archive {
+/* .scroller-archive {
     overflow-y: scroll;
     scrollbar-color: blue lightgrey;
     scrollbar-width: thin;
-}
+} */
 
 .singleTask {
     /* width: 400px; */
@@ -87,6 +87,7 @@ h2 {
     background-color: skyblue;
     width: 100px;
     text-align: center;
+    margin: 5px 5px 5px 5px;
 }
 
 .buttonStartPlaceholder {
@@ -96,6 +97,7 @@ h2 {
     background-color: lightgray;
     width: 100px;
     text-align: center;
+    margin: 5px 5px 5px 5px;
 }
 
 .buttonDone {
@@ -104,6 +106,7 @@ h2 {
     background-color: lightgreen;
     width: 100px;
     text-align: center;
+    margin: 5px 5px 5px 5px;
 }
 
 .buttonRemove {
@@ -112,6 +115,7 @@ h2 {
     background-color: tomato;
     width: 100px;
     text-align: center;
+    margin: 5px 5px 5px 0px;
 }
 
 .buttonDelete {
@@ -120,6 +124,7 @@ h2 {
     background-color: palevioletred;
     width: 100px;
     text-align: center;
+    margin: 5px 5px 5px 5px;
 }
 
 .placeholder {
