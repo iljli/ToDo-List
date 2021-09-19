@@ -42,6 +42,9 @@ const inputFieldMessage = document.getElementById('inputTextField');
 let buttonsStart = document.getElementsByClassName('buttonStart');
 let buttonsDone = document.getElementsByClassName('buttonDone');
 let buttonsDelete = document.getElementsByClassName('buttonDelete');
+const summaryToDo = document.getElementById('backlogcounter')
+const summaryActive = document.getElementById('activecounter')
+const summaryDone = document.getElementById('donecounter')
 
 
 //***********************************************************/
@@ -154,6 +157,7 @@ buttonAddTask.onclick = function () {
         injectTemplateToDOM(todoid, "todo", todoTextMessage);
         // parseButtonStartTask();
         parseButtonStart();
+        countTasks(taskList)
         console.log(`Added "${todoTextMessage}" to the Task-List`);
     } else {
         console.log("Textfield is empty - nothing added to Task-List")
@@ -195,6 +199,7 @@ function eventTaksStart(e) {
     parseButtonStart();
     parseButtonDone();
     parseButtonDelete();
+    countTasks(taskList)
 }
 
 
@@ -211,6 +216,7 @@ function eventTaskDone(e) {
     parseButtonStart();
     parseButtonDone();
     parseButtonDelete();
+    countTasks(taskList)
 }
 
 
@@ -228,6 +234,7 @@ function eventTaskDelete(e) {
     parseButtonStart();
     parseButtonDone();
     parseButtonDelete();
+    countTasks(taskList)
     // console.table(taskList);
 }
 
@@ -252,11 +259,30 @@ function renderRemoveToDoList(e) {
 
 
 //***********************************************************/
+function countTasks(list) {
+    let backLogCount = 0;
+    let activeLogCount = 0;
+    let doneLogCount = 0;
+
+    backLogCount = list.filter(result => result.status_todo === "todo").length
+    activeLogCount = list.filter(result => result.status_todo === "active").length
+    doneLogCount = list.filter(result => result.status_todo === "done").length
+    console.log(`Backlog tasks: ${backLogCount}`)
+    console.log(`Active tasks: ${activeLogCount}`)
+    console.log(`Done tasks: ${doneLogCount}`)
+    summaryToDo.value = backLogCount;
+    summaryActive.value = activeLogCount;
+    summaryDone.value = doneLogCount;
+}
+
+
+//***********************************************************/
 function init() {
     renderToDoList(taskList)
     parseButtonStart();
     parseButtonDone();
     parseButtonDelete();
+    countTasks(taskList)
 }
 
 
