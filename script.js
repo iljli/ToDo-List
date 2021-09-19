@@ -26,13 +26,13 @@ let taskList = [{
     },
     {
         "id_todo": 14,
-        "status_todo": "deleted",
-        "task_todo": "Task E (deleted)"
+        "status_todo": "done",
+        "task_todo": "Task E (done)"
     },
     {
         "id_todo": 15,
-        "status_todo": "deleted",
-        "task_todo": "Task F (deleted)"
+        "status_todo": "done",
+        "task_todo": "Task F (done)"
     },
 ]
 
@@ -44,17 +44,14 @@ let buttonsDone = document.getElementsByClassName('buttonDone');
 let buttonsDelete = document.getElementsByClassName('buttonDelete');
 
 
-
-
 //***********************************************************/
 function parseButtonStart() {
-    let button;
-    let myTest = document.querySelectorAll("div")
-    for (button of buttonsStart) {
+    for (let button of buttonsStart) {
         // console.log(button)
-        button.addEventListener("click", startingTask);
+        button.addEventListener("click", eventTaksStart);
     }
 }
+
 
 //***********************************************************/
 function parseButtonDone() {
@@ -64,6 +61,7 @@ function parseButtonDone() {
     }
 }
 
+
 //***********************************************************/
 function parseButtonDelete() {
     for (let button of buttonsDelete) {
@@ -71,6 +69,7 @@ function parseButtonDelete() {
         button.onclick = eventTaskDelete
     }
 }
+
 
 //***********************************************************/
 const addTaskToList = (id_todo, status_todo, task_todo) => {
@@ -84,8 +83,6 @@ const addTaskToList = (id_todo, status_todo, task_todo) => {
 }
 
 
-//***********************************************************/
-// Test if valid Text is in Textfiled
 //***********************************************************/
 const textIsNotEmpty = (text) => {
     if (!text) return false;
@@ -120,7 +117,7 @@ function injectTemplateToDOM(todoid, category, todoTextMessage) {
             domTargetSub = 'tasks_active';
             domButtonText = 'done';
             break;
-        case "deleted":
+        case "done":
             domTarget = '.tasks_done';
             domButton = 'buttonDelete';
             domTargetSub = 'tasks_done';;
@@ -145,6 +142,7 @@ function injectTemplateToDOM(todoid, category, todoTextMessage) {
     `;
     document.querySelector(domTarget).lastElementChild.innerHTML += template;
 }
+
 
 //***********************************************************/
 buttonAddTask.onclick = function () {
@@ -185,13 +183,13 @@ addPlaceholder_todoTasks = function () {
 
 
 //***********************************************************/
-function startingTask(e) {
+function eventTaksStart(e) {
+    console.log('Button "start" pressed ')
     console.log(e.target.parentElement.dataset.todoid);
     const foundItem = taskList.findIndex(index => index.id_todo == e.target.parentElement.dataset.todoid)
     console.log(`Index of found item: ${foundItem}`);
     e.target.parentElement.remove();
     taskList[foundItem].status_todo = "active"
-    // document.createElement('mylist');
     renderRemoveToDoList(e);
     renderToDoList(taskList)
     parseButtonStart();
@@ -203,12 +201,34 @@ function startingTask(e) {
 //***********************************************************/
 function eventTaskDone(e) {
     console.log('Button "done" pressed ')
+    console.log(e.target.parentElement.dataset.todoid);
+    const foundItem = taskList.findIndex(index => index.id_todo == e.target.parentElement.dataset.todoid)
+    console.log(`Index of found item: ${foundItem}`);
+    e.target.parentElement.remove();
+    taskList[foundItem].status_todo = "done"
+    renderRemoveToDoList(e);
+    renderToDoList(taskList)
+    parseButtonStart();
+    parseButtonDone();
+    parseButtonDelete();
 }
 
 
 //***********************************************************/
 function eventTaskDelete(e) {
     console.log('Button "delete" pressed ')
+    console.log(e.target.parentElement.dataset.todoid);
+    const foundItem = taskList.findIndex(index => index.id_todo == e.target.parentElement.dataset.todoid)
+    console.log(`Index of found item: ${foundItem}`);
+    e.target.parentElement.remove();
+    taskList[foundItem].status_todo = "done"
+    taskList.splice(foundItem,1);
+    renderRemoveToDoList(e);
+    renderToDoList(taskList)
+    parseButtonStart();
+    parseButtonDone();
+    parseButtonDelete();
+    // console.table(taskList);
 }
 
 
