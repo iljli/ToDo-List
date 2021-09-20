@@ -222,7 +222,7 @@ function eventTaskDelete(e) {
     console.log(`Index of found item: ${foundItem}`);
     e.target.parentElement.remove();
     taskList[foundItem].status_todo = "done"
-    taskList.splice(foundItem,1);
+    taskList.splice(foundItem, 1);
     renderRemoveToDoList(e);
     renderToDoList(taskList)
     parseButtonStart();
