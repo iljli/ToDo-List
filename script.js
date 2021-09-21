@@ -132,7 +132,6 @@ function injectTemplateToDOM(todoid, category, todoTextMessage) {
             break;
         default:
             return;
-            // break;
     }
     const template = `
     <div class="flexbox_column ${domTargetSub} dynamic" data-todoid="${todoid}">
@@ -198,13 +197,19 @@ function eventUpdateHandler(e) {
 
 
 //***********************************************************/
-function eventTaksStart(e) {
-    console.log('Button "start" pressed ');
+function findAndRemoveItem(e) {
     console.log(e.target.parentElement.dataset.todoid);
     const foundItem = taskList.findIndex(index => index.id_todo == e.target.parentElement.dataset.todoid);
     console.log(`Index of found item: ${foundItem}`);
     e.target.parentElement.remove();
-    taskList[foundItem].status_todo = "active";
+    return foundItem;
+}
+
+
+//***********************************************************/
+function eventTaksStart(e) {
+    console.log('Button "start" pressed ');
+    taskList[findAndRemoveItem(e)].status_todo = "active";
     eventUpdateHandler(e);
 }
 
@@ -212,25 +217,18 @@ function eventTaksStart(e) {
 //***********************************************************/
 function eventTaskDone(e) {
     console.log('Button "done" pressed ');
-    console.log(e.target.parentElement.dataset.todoid);
-    const foundItem = taskList.findIndex(index => index.id_todo == e.target.parentElement.dataset.todoid);
-    console.log(`Index of found item: ${foundItem}`);
-    e.target.parentElement.remove();
-    taskList[foundItem].status_todo = "done";
-    eventUpdateHandler();
+    taskList[findAndRemoveItem(e)].status_todo = "done";
+    eventUpdateHandler(e);
 }
 
 
 //***********************************************************/
 function eventTaskDelete(e) {
     console.log('Button "delete" pressed ');
-    console.log(e.target.parentElement.dataset.todoid);
-    const foundItem = taskList.findIndex(index => index.id_todo == e.target.parentElement.dataset.todoid);
-    console.log(`Index of found item: ${foundItem}`);
-    e.target.parentElement.remove();
-    // taskList[foundItem].status_todo = "done";
-    taskList.splice(foundItem, 1);
-    eventUpdateHandler();
+    findAndRemoveItem(e);
+    // taskList[foundItem].status_todo = "deleted";
+    taskList.splice(findAndRemoveItem(e), 1);
+    eventUpdateHandler(e);
 }
 
 
@@ -278,13 +276,11 @@ function getListToLocalStorage() {
     if (taskListTemp) {
         taskList = JSON.parse(taskListTemp);
     }
-
 }
 
 
 //***********************************************************/
 function init() {
-    
     getListToLocalStorage();
     renderToDoList(taskList);
     parseButtonStart();
