@@ -1,4 +1,8 @@
 //***********************************************************/
+const APP_NAME = "ToDoList_Group2"
+
+
+//***********************************************************/
 let taskList = [{
         "id_todo": 0,
         "status_todo": "placeholder", // todo; active; done; deleted; placeholder
@@ -158,6 +162,7 @@ buttonAddTask.onclick = function () {
         parseButtonStart();
         countTasks(taskList)
         console.log(`Added "${todoTextMessage}" to the Task-List`);
+        localStorage.setItem(APP_NAME, JSON.stringify(taskList))
     } else {
         console.log("Textfield is empty - nothing added to Task-List")
     }
@@ -181,6 +186,18 @@ addPlaceholder_todoTasks = function () {
 
 
 //***********************************************************/
+function eventUpdateHandler(e) {
+    renderRemoveToDoList(e);
+    renderToDoList(taskList)
+    parseButtonStart();
+    parseButtonDone();
+    parseButtonDelete();
+    countTasks(taskList)
+    localStorage.setItem(APP_NAME, JSON.stringify(taskList))
+}
+
+
+//***********************************************************/
 function eventTaksStart(e) {
     console.log('Button "start" pressed ')
     console.log(e.target.parentElement.dataset.todoid);
@@ -188,12 +205,7 @@ function eventTaksStart(e) {
     console.log(`Index of found item: ${foundItem}`);
     e.target.parentElement.remove();
     taskList[foundItem].status_todo = "active"
-    renderRemoveToDoList(e);
-    renderToDoList(taskList)
-    parseButtonStart();
-    parseButtonDone();
-    parseButtonDelete();
-    countTasks(taskList)
+    eventUpdateHandler(e)
 }
 
 
@@ -205,12 +217,7 @@ function eventTaskDone(e) {
     console.log(`Index of found item: ${foundItem}`);
     e.target.parentElement.remove();
     taskList[foundItem].status_todo = "done"
-    renderRemoveToDoList(e);
-    renderToDoList(taskList)
-    parseButtonStart();
-    parseButtonDone();
-    parseButtonDelete();
-    countTasks(taskList)
+    eventUpdateHandler()
 }
 
 
@@ -223,13 +230,7 @@ function eventTaskDelete(e) {
     e.target.parentElement.remove();
     taskList[foundItem].status_todo = "done"
     taskList.splice(foundItem, 1);
-    renderRemoveToDoList(e);
-    renderToDoList(taskList)
-    parseButtonStart();
-    parseButtonDone();
-    parseButtonDelete();
-    countTasks(taskList)
-    // console.table(taskList);
+    eventUpdateHandler()
 }
 
 
@@ -271,7 +272,20 @@ function countTasks(list) {
 
 
 //***********************************************************/
+function getListToLocalStorage() {
+    const taskListTemp = localStorage.getItem(APP_NAME)
+    
+    if (taskListTemp) {
+        taskList = JSON.parse(taskListTemp)
+    }
+
+}
+
+
+//***********************************************************/
 function init() {
+    
+    getListToLocalStorage();
     renderToDoList(taskList)
     parseButtonStart();
     parseButtonDone();
