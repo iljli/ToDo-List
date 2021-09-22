@@ -4,4 +4,3 @@
 - simple ToDo-List that stores data on local browser storage
 - main-focus: DOM-Manipulation with pure Vanilla JavaScript
 - Date: 21.09.2021
-- Author: Dr. Michael Breitenstein
